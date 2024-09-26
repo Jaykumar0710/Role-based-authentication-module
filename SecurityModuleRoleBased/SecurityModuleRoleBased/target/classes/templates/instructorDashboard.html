@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .banner-image {
+            background-image: url('https://via.placeholder.com/1920x600?text=Instructor+Dashboard'); /* Replace with an actual banner */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            position: relative;
+            color: white;
+        }
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <!-- Welcome Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 th:if="${user != null}" th:text="'Welcome, ' + ${user.username}">Welcome</h4>
+            <h4 th:if="${user == null}">Welcome, Guest</h4>
+            <small th:text="'Role: ' + ${user.role}"></small>
+        </div>
+        <div class="ml-auto">
+            <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner-image">
+        <div class="banner-text">
+            <h1>Welcome to the Instructor Dashboard</h1>
+            <p>Manage your courses, view student submissions, and update content.</p>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="mt-5">
+        <h2>Instructor Tools</h2>
+        <p>Use the options below to manage your courses and interact with students.</p>
+
+        <!-- Instructor Options (Cards) -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250?text=Manage+Courses" class="card-img-top" alt="Manage Courses">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Courses</h5>
+                        <p class="card-text">Add, update, or remove your courses from the platform.</p>
+                        <a href="/instructor/manage-courses" class="btn btn-primary">Go to Courses</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250?text=View+Submissions" class="card-img-top" alt="View Submissions">
+                    <div class="card-body">
+                        <h5 class="card-title">View Submissions</h5>
+                        <p class="card-text">Review and grade student submissions.</p>
+                        <a href="/instructor/view-submissions" class="btn btn-primary">Go to Submissions</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250?text=Update+Content" class="card-img-top" alt="Update Content">
+                    <div class="card-body">
+                        <h5 class="card-title">Update Course Content</h5>
+                        <p class="card-text">Upload new content or edit existing lessons.</p>
+                        <a href="/instructor/update-content" class="btn btn-primary">Update Content</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
