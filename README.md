@@ -42,7 +42,7 @@ Ensure you have the following installed before starting the project:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-repository/role-based-auth-system.git
+   git clone https://github.com/Jaykumar0710/Role-based-authentication-module.git
    cd role-based-auth-system
    
 2. **Application.properties**:
